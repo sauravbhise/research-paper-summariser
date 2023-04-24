@@ -1,0 +1,23 @@
+{
+  "name": "research-paper-summariser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauravbhise/research-paper-summariser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauravbhise/research-paper-summariser/issues"
+  },
+  "homepage": "https://github.com/sauravbhise/research-paper-summariser#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
