@@ -33,16 +33,19 @@ function convertTextToJSON(text) {
 			continue; // Skip empty lines
 		}
 
-		if (line.includes('Abstract')) {
-			startParsing = true; // Set the flag to true when encountering "Abstract"
+		if (!startParsing) {
+			json.Title = line.trim(); // Set the "Title" field as the first line of the text
+			startParsing = true;
+			continue; // Skip to the next line
+		}
+
+		if (line.toLowerCase().includes('abstract')) {
 			currentTitle = 'Abstract';
 			currentParagraph = '';
-		} else if (startParsing) {
-			if (line.match(/^\d+(\.\d+)*\./)) {
-				// Assume it is a section title with numbers and dots
-				if (currentTitle !== null && currentParagraph !== null) {
-					json[currentTitle] = currentParagraph.trim();
-				}
+		} else if (currentTitle !== null && currentParagraph !== null) {
+			if (line.match(/^\d+(\.\d+)*\./) || line.match(/^(?=[MDCLXVI])M*(C[MD]|D?C*)(X[CL]|L?X*)(I[XV]|V?I*)\./)) {
+				// Assume it is a section title with decimal or roman numeral formats
+				json[currentTitle] = currentParagraph.trim();
 				currentTitle = line.trim();
 				currentParagraph = '';
 			} else {
