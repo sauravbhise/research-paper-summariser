@@ -1,0 +1,23 @@
+.fileUpload{
+    max-width: 300px;
+    margin-top: 10%;
+    margin-left: 40%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    
+}
+
+.uploadTitle{
+    display: block;
+    margin-bottom: 10%;
+}
+
+.fileInput{
+    margin-bottom: 5%;
+}
+
+.submit{
+    margin-top: 5%
+}
