@@ -3,24 +3,24 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-} 
-from "react-router-dom";
-import Fileupload from './components/uplaod';
+}
+  from "react-router-dom";
+import Fileupload from './components/upload';
 import AllPages from './components/allpageview';
 import View from './components/parent';
 
 function App() {
   return (
-      <>
-          <Router>
-          <Routes>
-              <Route exact path='/' element={<View/>}/>
-              <Route exact path='/summary' element={<AllPages/>}/>
-          </Routes>
-          </Router>
-      </>
-     
-);
+    <>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<View />} />
+          <Route exact path='/summary' element={<AllPages />} />
+        </Routes>
+      </Router>
+    </>
+
+  );
 }
 
 export default App;
